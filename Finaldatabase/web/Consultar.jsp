@@ -13,9 +13,9 @@
 
 <br><br><br><center><div id=contenedor><h3>Consulta</h3><br>
 <FORM ACTION=ResultadoConsulta.jsp METHOD=post>
-    <select name=quimestre required>
+    <select name=vehiculo required>
     <option value='' selected=selected>Seleccione tipo de consulta</option>
-    <option value='quimestre1'>PLACA</option>
+    <option value='placaactual'>PLACA</option>
     <!--<option value='quimestre2'>N°CEDULA</option>-->
 </select>
 <INPUT type=text required name=valor placeholder='Ingrese Placa'>

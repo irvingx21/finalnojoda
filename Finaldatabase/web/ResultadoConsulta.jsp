@@ -55,73 +55,28 @@ table tr:hover {
 <body>
 <%@page import="java.sql.*" %>
 <%
-String quimestre = request.getParameter("quimestre");
-System.out.println("sii" + quimestre);
-out.println("<center><hr color='#003399'/><div id=contenedor><h3>Consulta de Notas Escuela José Peralta</h3><FORM ACTION=index.jsp METHOD=post>");
+String vehiculo = request.getParameter("vehiculo");
+System.out.println("sii" + vehiculo);
+out.println("<center><hr color='#003399'/><div id=contenedor><h3>Consulta de Propietarios</h3><FORM ACTION=index.jsp METHOD=post>");
 
 Class.forName("org.postgresql.Driver").newInstance();
                         String user = "postgres";
                         String password = "1234";
-                        String connect = "jdbc:postgresql://localhost:5432/dbperalta";
+                        String connect = "jdbc:postgresql://localhost:5432/finalbase";
 			Connection conexion = DriverManager.getConnection(connect, user, password);
 Statement Estamento = conexion.createStatement();
 String valor = request.getParameter("valor");
-System.out.println("valor: " + valor);
-ResultSet rs1 = Estamento.executeQuery("select nombres, nombre from curso inner join Estudiantes on estudiantes.id_curso=curso.id where matricula = "+valor+"");
+System.out.println("valor " + valor);
+//ResultSet rs1 = Estamento.executeQuery("select v.PlacaActual, p.Nombres,p.Apellidos from Propietario as p inner join Vehiculo as v on v.Cedulapropietario = p.cedula where v.PlacaActual = "+valor+"");
+ResultSet rs1 = Estamento.executeQuery("select marca ,añofabricacion ,placaactual from vehiculo where placaactual='"+valor+"'");
 while(rs1.next()) {
-out.println("<h3>Estudiante: "+rs1.getString("nombres")+"</h3>"); 
-out.println("<h3>Curso: "+rs1.getString("nombre")+"</h3>");
-out.println("<h3>Quimestre: "+quimestre+"</h3>");
+out.println("<h3>Marca: "+rs1.getString("marca")+"</h3>"); 
+out.println("<h3>Año de Fa: "+rs1.getString("añofabricacion")+"</h3>");
+out.println("<h3>Placa: "+rs1.getString("placaactual")+"</h3>");
 }
-ResultSet rs = Estamento.executeQuery("select Matricula, estudiantes.Nombres, Materias.Nombre as materia, Curso.nombre as curso, \n" +
-"i, ci, ii, cii, iii,ciii,ochenta,examen,veinte,q1,c   \n" +
-"from "+quimestre+" inner join estudiantes \n" +
-"on estudiantes.matricula = "+quimestre+".matricula_estudiante\n" +
-"inner join Materias on materias.id = "+quimestre+".id_materia\n" +
-"inner join Curso on Estudiantes.id_curso = curso.id where matricula = "+valor+" ");
 
-System.out.println("select Matricula, estudiantes.Nombres, Materias.Nombre as materia, Curso.nombre as curso, \n" +
-"i, ci, ii, cii, iii,ciii,ochenta,examen,veinte,q1,c   \n" +
-"from "+quimestre+" inner join estudiantes \n" +
-"on estudiantes.matricula = "+quimestre+".matricula_estudiante\n" +
-"inner join Materias on materias.id = "+quimestre+".id_materia\n" +
-"inner join Curso on Estudiantes.id_curso = curso.id where matricula = "+valor+" ");
 
-out.println("<form action='ConsultarNota.jsp'>");
-out.println("<TABLE ><div></center>");
-out.println("<TR>");
-out.println("<Th >Materia</Th>");
-out.println("<Td >I</Td>");
-out.println("<Td >C</Td>");
-out.println("<Td >II</Td>");
-out.println("<Td >C</Td>");
-out.println("<Td >III</Td>");
-out.println("<Td >C</Td>");
-out.println("<Td >80%</Td>");
-out.println("<Td >EXA</Td>");
-out.println("<Td >20%</Td>");
-out.println("<Td >Q1</Td>");
-out.println("<Td >C</Td>");
-out.println("</TR>");
-
-while(rs.next()) {
-out.println("<TR>");
-out.println("<Th class=ts>"+rs.getString("materia")+"</Th>");
-out.println("<TD >"+rs.getString("i")+"</TD>");
-out.println("<TD >"+rs.getString("ci")+"</TD>");
-out.println("<TD >"+rs.getString("ii")+"</TD>");
-out.println("<TD >"+rs.getString("cii")+"</TD>");
-out.println("<TD >"+rs.getString("iii")+"</TD>");
-out.println("<TD >"+rs.getString("ciii")+"</TD>");
-out.println("<TD >"+rs.getString("ochenta")+"</TD>");
-out.println("<TD >"+rs.getString("examen")+"</TD>");
-out.println("<TD >"+rs.getString("veinte")+"</TD>");
-out.println("<TD >"+rs.getString("q1")+"</TD>");
-out.println("<TD >"+rs.getString("c")+"</TD>");
-out.println("</TR>");
-};
-
-rs.close();
+rs1.close();
 Estamento.close();
 conexion.close();
 
@@ -129,7 +84,7 @@ out.println("</TABLE></form></div></center>");
 out.println("<center><form><input type='button' onclick='window.print();' value='Imprimir'/></form></center>");
 
 out.println("</form></div></center>");
-out.println("<center><form action=ConsultarNota.jsp><input value=Volver type=submit></form></center>");
+out.println("<center><form action=Consultar.jsp><input value=Volver type=submit></form></center>");
 %>
 </body>
 </html>
