@@ -18,7 +18,7 @@
     <option value='quimestre1'>PLACA</option>
     <!--<option value='quimestre2'>N°CEDULA</option>-->
 </select>
-<INPUT type=number required name=valor placeholder='Ingrese Placa'>
+<INPUT type=text required name=valor placeholder='Ingrese Placa'>
 <INPUT TYPE=SUBMIT VALUE=BUSCAR>
 </FORM></div>
     <br>
