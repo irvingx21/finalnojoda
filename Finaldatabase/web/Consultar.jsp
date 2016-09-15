@@ -16,6 +16,7 @@
     <select name=matricula required>
     <option value='' selected=selected>Seleccione tipo de consulta</option>
     <option value='placaactual'>PLACA</option>
+    <option value='placaactual'>N°CEDULA</option>
     <!--<option value='quimestre2'>N°CEDULA</option>-->
 </select>
 <INPUT type=text required name=valor placeholder='Ingrese Placa'>

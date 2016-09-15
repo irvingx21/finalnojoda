@@ -20,6 +20,10 @@
         <servlet-name>ActualizarMatricula</servlet-name>
         <servlet-class>Servlet.ActualizarMatricula</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Registromultas</servlet-name>
+        <servlet-class>Servlet.Registromultas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Sesion</servlet-name>
         <url-pattern>/iniciar</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ActualizarMatricula</servlet-name>
         <url-pattern>/actualizamatricula</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registromultas</servlet-name>
+        <url-pattern>/registromultas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

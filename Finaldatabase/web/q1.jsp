@@ -41,10 +41,10 @@
 <br>
 <br>
 <br>
-<input type="submit" value="Ingresar" >
-<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" >
+<center><input type="submit" value="Ingresar" >
+<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
 </form>
- <form action="registrovehiculo" method="post">
+<form action="registrovehiculo" method="post">
     <table>
    <tr>
     <th colspan='13'><h3>Registro de Vehiculos</h3></th><br><br>
@@ -73,8 +73,37 @@
 <br>
 <br>
 <br>
-<input type="submit" value="Ingresar" >
-<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" >
+<center><input type="submit" value="Ingresar" >
+    <input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
+</form>
+<form action="registromultas" method="post">
+    <table>
+   <tr>
+    <th colspan='13'><h3>Registro de Multas</h3></th><br><br>
+   </tr>
+   <tr>
+    <td width="20">Fecha Citacion</td>
+    <td width="5">N° Citacion</td>
+    <td width="5">Multa</td>
+    <td width="5">Cedula</td>
+    <td width="5">Placa-Actual</td>
+  </tr>
+  <tr>
+       
+</SELECT></td>
+    <td><input type="date"  name='fechadecitacion'  required></td>
+    <td><input type="text"  name='numerodecitacion' required></td>
+    <td><input type="text"  name='valormulta' required></td>
+    <td><input type="text"  name='cedulapropietario' required></td>
+    <td><input type="text"  name='PlacaActualRevision' required></td>
+</select></td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<center><input type="submit" value="Ingresar" >
+<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
 </form>    
 <br>
 <br>

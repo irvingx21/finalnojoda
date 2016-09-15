@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Usuario
  */
-public class ActualizarMatricula extends HttpServlet {
+public class Registromultas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,28 +30,21 @@ public class ActualizarMatricula extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+       response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        
-        String fechadematriculacionanterior = request.getParameter("fechadematriculacionanterior");
-        String fechadematriculacionactual = request.getParameter("fechadematriculacionactual");
-        String caduca = request.getParameter("caduca");
-        String jefatura = request.getParameter("jefatura");
-        String totaldematricula = request.getParameter("totaldematricula");
-        String revision = request.getParameter("revision");
-        String multa = request.getParameter("multa");
-        String placaactual = request.getParameter("placaactual");
+        String fechadecitacion = request.getParameter("fechadecitacion");
+        String numerodecitacion = request.getParameter("numerodecitacion");
+        String valormulta = request.getParameter("valormulta");
         String cedulapropietario = request.getParameter("cedulapropietario");
-        String codigo = request.getParameter("codigo");
-     
+        String PlacaActualRevision = request.getParameter("PlacaActualRevision");
+  
         Consultas co=new Consultas();
-        if (co.actualizarmatricula(codigo, fechadematriculacionanterior, fechadematriculacionactual, caduca, jefatura, totaldematricula, revision, multa, placaactual, cedulapropietario) ) {
-            response.sendRedirect("q3.jsp");
+        if (co.multas(fechadecitacion, numerodecitacion, valormulta, cedulapropietario,PlacaActualRevision)) {
+            response.sendRedirect("q1.jsp");
         }else{
             response.sendRedirect("perfil.jsp");
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -93,5 +86,4 @@ public class ActualizarMatricula extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-}
-//actualizamatricula
+}//registromultas

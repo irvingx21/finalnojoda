@@ -7,7 +7,6 @@ package controlador;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 /**
  *
@@ -135,9 +134,8 @@ public class Consultas extends Conexion {
             String consulta="update matricula set fechadeatriculacionanterior=?,fechadematriculacionactual=?,"
                     + "caduca=?,jefatura=?,totaldematricula=?,revision=?,"
                     + "multa=?,placaactual=?,cedulapropietario=? where  codigo=?;";
-            //pst = getConnection().prepareStatement(consulta);
+            pst = getConnection().prepareStatement(consulta);
             //pst = getConnection().prepareStatement(consulta,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            pst.executeUpdate(consulta);
             pst.setString(1, fechadematriculacionanterior);
             pst.setString(2, fechadematriculacionactual);
             pst.setString(3, caduca);
@@ -196,11 +194,46 @@ public class Consultas extends Conexion {
         return false;
     }
     
+        public boolean multas (
+                String fechadecitacion,
+                String numerodecitacion,
+                String valormulta, 
+                String cedulapropietario, 
+                String PlacaActualRevision){
+        
+        PreparedStatement pst=null;
+        try {
+            String consulta="insert into multas (fechadecitacion,numerodecitacion,valormulta,cedulapropietario,PlacaActualRevision) values (?,?,?,?,?)";
+            pst = getConnection().prepareStatement(consulta);
+            //pst = getConnection().prepareStatement(consulta,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            pst.setString(1, fechadecitacion);
+            pst.setString(2, numerodecitacion);
+            pst.setString(3, valormulta);
+            pst.setString(4, cedulapropietario);
+            pst.setString(5, PlacaActualRevision);
+            if (pst.executeUpdate() == 1) {
+                return true;
+            }
+        } catch (Exception e) {
+        }finally{
+            try {
+                if(getConnection()!=null)getConnection().close();
+                if (pst != null) pst.close();
+               
+            } catch (Exception e) {
+                System.out.println("Error "+e);
+            }
+        }
+        return false;
+    }
+    
+    
+    
     
     public static void main(String[] args) {
         Consultas co=new Consultas();
-        //System.out.println(co.registrar("258258","nombres","apellidos","residencia","direccion","telefono"));
-       //System.out.println(co.registrarvehiculo("digimon","FORD","2001","CAMIONETA","CAMIONETA","789789"));
+        //System.out.println(co.multas("2016-12-12","131313","500","258258","popis"));
+       //System.out.println(co.registrarvehiculo("ñoño","FORD","2001","CAMIONETA","CAMIONETA","789789"));
         //System.out.println(co.actualizarmatricula(codigo, fechamatriculacionanterior, fechamatriculacionactual, caduca, jefatura, totalmatricula, revision, multa, placaactual, cedulapropietario));
     }
     
