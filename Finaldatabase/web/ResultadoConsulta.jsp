@@ -67,7 +67,7 @@ Class.forName("org.postgresql.Driver").newInstance();
 Statement Estamento = conexion.createStatement();
 String valor = request.getParameter("valor");
 System.out.println("valor " + valor);
-ResultSet rs1 = Estamento.executeQuery("select v.PlacaActual, p.Nombres,p.Apellidos from Propietario as p inner join Vehiculo as v on v.Cedulapropietario = p.cedula where v.PlacaActual = '"+valor+"'");
+ResultSet rs1 = Estamento.executeQuery("select v.PlacaActual, p.Nombres,p.Apellidos from Propietario as p inner join Vehiculo as v on v.Cedulapropietario = p.cedula where v.PlacaActual = '"+valor+"'or cedulapropietario='"+valor+"'");
 //ResultSet rs1 = Estamento.executeQuery("select marca ,añofabricacion ,placaactual from vehiculo where placaactual='"+valor+"'");
 while(rs1.next()) {
 out.println("<h3>Nombre   : "+rs1.getString("Nombres")+"</h3>"); 
@@ -75,9 +75,9 @@ out.println("<h3>Apellidos: "+rs1.getString("Apellidos")+"</h3>");
 out.println("<h3>Placa: "+rs1.getString("placaactual")+"</h3>");
 }
 
-ResultSet rs = Estamento.executeQuery("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"'");
+ResultSet rs = Estamento.executeQuery("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"' or cedulapropietario='"+valor+"'");
 
-System.out.println("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"'");
+System.out.println("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"' or cedulapropietario='"+valor+"'");
 
 out.println("<form action='ConsultarNota.jsp'>");
 out.println("<TABLE ><div></center>");
