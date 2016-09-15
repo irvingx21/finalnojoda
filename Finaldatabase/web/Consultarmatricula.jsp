@@ -12,7 +12,7 @@
 
 
 <br><br><br><center><div id=contenedor><h3>Consulta</h3><br>
-<FORM ACTION=ResultadoConsulta.jsp METHOD=post>
+<FORM ACTION=q2.jsp METHOD=get>
     <select name=matricula required>
     <option value='' selected=selected>Seleccione tipo de consulta</option>
     <option value='placaactual'>PLACA</option>

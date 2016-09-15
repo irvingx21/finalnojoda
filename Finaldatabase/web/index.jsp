@@ -63,8 +63,8 @@ text-align: left;
   <tr>
       <td>Registro<br>(Requiere Iniciar Sesión)</td><br>
       <td>Consulta</td><br>
-      <td>Actualización<br>(Requiere Iniciar Sesión)</td><br>
-      <td>Eliminación<br>(Requiere Iniciar Sesión)</td><br>
+      <!--<td>Actualización<br>(Requiere Iniciar Sesión)</td><br>
+      <!--<td>Eliminación<br>(Requiere Iniciar Sesión)</td><br>-->
   </tr>
   <br>
   <br>
@@ -73,8 +73,8 @@ text-align: left;
   <br>
     <td><a href="Sesion.jsp"><img border="0" src="imagenes/create.jpg" width="100" height="100"></a></td>
     <td><a href="Consultar.jsp"><img border="0" src="imagenes/read.jpg" width="100" height="100"></a></td>
-    <td><a href="verificar.jsp"><img border="0" src="imagenes/update.jpg" width="100" height="100"></a></td>
-    <td><a href="verificarelimin.jsp"><img border="0" src="imagenes/delete.jpg" width="100" height="100"></a></td>
+    <!--<td><a href="verificar.jsp"><img border="0" src="imagenes/update.jpg" width="100" height="100"></a></td>-->
+    <!--<td><a href="verificarelimin.jsp"><img border="0" src="imagenes/delete.jpg" width="100" height="100"></a></td>-->
   </tr>
 </table>
 </div>

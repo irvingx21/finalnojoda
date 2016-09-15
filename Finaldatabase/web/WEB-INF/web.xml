@@ -8,6 +8,18 @@
         <servlet-name>Registripropietario</servlet-name>
         <servlet-class>Servlet.Registripropietario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Registromatricula</servlet-name>
+        <servlet-class>Servlet.Registromatricula</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Registrovehiculo</servlet-name>
+        <servlet-class>Servlet.Registrovehiculo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarMatricula</servlet-name>
+        <servlet-class>Servlet.ActualizarMatricula</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Sesion</servlet-name>
         <url-pattern>/iniciar</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>Registripropietario</servlet-name>
         <url-pattern>/registropro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registromatricula</servlet-name>
+        <url-pattern>/registromatricula</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registrovehiculo</servlet-name>
+        <url-pattern>/registrovehiculo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarMatricula</servlet-name>
+        <url-pattern>/actualizamatricula</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

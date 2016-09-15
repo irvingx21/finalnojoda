@@ -67,16 +67,50 @@ Class.forName("org.postgresql.Driver").newInstance();
 Statement Estamento = conexion.createStatement();
 String valor = request.getParameter("valor");
 System.out.println("valor " + valor);
-//ResultSet rs1 = Estamento.executeQuery("select v.PlacaActual, p.Nombres,p.Apellidos from Propietario as p inner join Vehiculo as v on v.Cedulapropietario = p.cedula where v.PlacaActual = "+valor+"");
-ResultSet rs1 = Estamento.executeQuery("select marca ,añofabricacion ,placaactual from vehiculo where placaactual='"+valor+"'");
+ResultSet rs1 = Estamento.executeQuery("select v.PlacaActual, p.Nombres,p.Apellidos from Propietario as p inner join Vehiculo as v on v.Cedulapropietario = p.cedula where v.PlacaActual = '"+valor+"'");
+//ResultSet rs1 = Estamento.executeQuery("select marca ,añofabricacion ,placaactual from vehiculo where placaactual='"+valor+"'");
 while(rs1.next()) {
-out.println("<h3>Marca: "+rs1.getString("marca")+"</h3>"); 
-out.println("<h3>Año de Fa: "+rs1.getString("añofabricacion")+"</h3>");
+out.println("<h3>Nombre   : "+rs1.getString("Nombres")+"</h3>"); 
+out.println("<h3>Apellidos: "+rs1.getString("Apellidos")+"</h3>");
 out.println("<h3>Placa: "+rs1.getString("placaactual")+"</h3>");
 }
 
+ResultSet rs = Estamento.executeQuery("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"'");
 
-rs1.close();
+System.out.println("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"'");
+
+out.println("<form action='ConsultarNota.jsp'>");
+out.println("<TABLE ><div></center>");
+out.println("<TR>");
+out.println("<Td >MATRICULA</Td>");
+out.println("<Td >Codigo</Td>");
+out.println("<Td >Fecha Ma. Anterior</Td>");
+out.println("<Td >Fecha Ma. Actual</Td>");
+out.println("<Td >Caduca</Td>");
+out.println("<Td >Jefatura</Td>");
+out.println("<Td >Valor</Td>");
+out.println("<Td >Revision</Td>");
+out.println("<Td >Multa</Td>");
+out.println("<Td >Placa</Td>");
+out.println("<Td >Cedula</Td>");
+out.println("</TR>");
+
+while(rs.next()) {
+out.println("<TR>");
+out.println("<TD >DATOS</TD>");
+out.println("<TD >"+rs.getString("codigo")+"</TD>");
+out.println("<TD >"+rs.getString("fechadematriculacionanterior")+"</TD>");
+out.println("<TD >"+rs.getString("fechadematriculacionactual")+"</TD>");
+out.println("<TD >"+rs.getString("caduca")+"</TD>");
+out.println("<TD >"+rs.getString("jefatura")+"</TD>");
+out.println("<TD >"+rs.getString("totaldematricula")+"</TD>");
+out.println("<TD >"+rs.getString("revision")+"</TD>");
+out.println("<TD >"+rs.getString("multa")+"</TD>");
+out.println("<TD >"+rs.getString("placaactual")+"</TD>");
+out.println("<TD >"+rs.getString("cedulapropietario")+"</TD>");
+out.println("</TR>");
+};
+rs.close();
 Estamento.close();
 conexion.close();
 

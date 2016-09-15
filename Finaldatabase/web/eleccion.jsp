@@ -55,12 +55,12 @@ text-align: left;
 <table class='centraTabla'>
     <tr><th colspan="2"><h3 align="center"> Seleccione</h3></th></tr>
   <tr>
+    <td>Registro</td>
     <td>Matriculacion</td>
-    <!--<td>Quimestre II</td>-->
   </tr>
   <tr>
     <td><a href="q1.jsp"><img border="0" src="imagenes/quimestre.png" width="100" height="100"></a></td>
-    <!--<td><a href="q2.jsp"><img border="0" src="quimestre.png" width="100" height="100"></a></td>-->
+    <td><a href="Consultarmatricula.jsp"><img border="0" src="imagenes/quimestre.png" width="100" height="100"></a></td>
   </tr>
 </table>
     <br>

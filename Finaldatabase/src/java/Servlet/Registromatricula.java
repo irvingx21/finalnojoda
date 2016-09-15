@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Usuario
  */
-public class Registripropietario extends HttpServlet {
+public class Registromatricula extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +33,24 @@ public class Registripropietario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String cedula = request.getParameter("cedula");
-        String nombres = request.getParameter("nombres");
-        String apellidos = request.getParameter("apellidos");
-        String residencia = request.getParameter("residencia");
-        String direccion = request.getParameter("direccion");
-        String telefono = request.getParameter("telefono");
-        
+        String codigo = request.getParameter("codigo");
+        String fechadematriculacionanterior = request.getParameter("fechadematriculacionanterior");
+        String fechadematriculacionactual = request.getParameter("fechadematriculacionactual");
+        String caduca = request.getParameter("caduca");
+        String jefatura = request.getParameter("jefatura");
+        String totalmatricula = request.getParameter("totalmatricula");
+        String revision = request.getParameter("revision");
+        String multa = request.getParameter("multa");
+        String placaactual = request.getParameter("placaactual");
+        String cedulapropietario = request.getParameter("cedulapropietario");
+     
         Consultas co=new Consultas();
-        if (co.registrar(cedula, nombres, apellidos, residencia,direccion, telefono)) {
+        if (co.registrarmatricula(codigo, fechadematriculacionanterior, fechadematriculacionactual, caduca, jefatura, totalmatricula, revision, multa, placaactual, cedulapropietario)) {
             response.sendRedirect("q1.jsp");
         }else{
             response.sendRedirect("perfil.jsp");
         }
-       
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -89,3 +93,6 @@ public class Registripropietario extends HttpServlet {
     }// </editor-fold>
 
 }
+
+//nombre del servlet  registromatricula
+

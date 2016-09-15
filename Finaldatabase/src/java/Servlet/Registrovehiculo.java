@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Usuario
  */
-public class Registripropietario extends HttpServlet {
+public class Registrovehiculo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +33,20 @@ public class Registripropietario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String cedula = request.getParameter("cedula");
-        String nombres = request.getParameter("nombres");
-        String apellidos = request.getParameter("apellidos");
-        String residencia = request.getParameter("residencia");
-        String direccion = request.getParameter("direccion");
-        String telefono = request.getParameter("telefono");
+        String placaactual = request.getParameter("placaactual");
+        String marca = request.getParameter("marca");
+        String añofabricacion = request.getParameter("añofabricacion");
+        String modelo = request.getParameter("modelo");
+        String tipo = request.getParameter("tipo");
+        String cedulapropietario = request.getParameter("cedulapropietario");
+       
         
         Consultas co=new Consultas();
-        if (co.registrar(cedula, nombres, apellidos, residencia,direccion, telefono)) {
+        if (co.registrarvehiculo(placaactual, marca, añofabricacion, modelo, tipo, cedulapropietario)) {
             response.sendRedirect("q1.jsp");
         }else{
             response.sendRedirect("perfil.jsp");
         }
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -89,3 +89,4 @@ public class Registripropietario extends HttpServlet {
     }// </editor-fold>
 
 }
+//registrovehiculo

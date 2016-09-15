@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <form action="registropro" method="get">
+ <form action="registropro" method="get">
     <table>
    <tr>
     <th colspan='13'><h3>Registro Propietarios</h3></th><br><br>
@@ -28,7 +28,7 @@
   <tr>
        
 </SELECT></td>
-    <td><input type="text" name='cedula' name="cedula" required></td>
+    <td><input type="text" name='cedula' name="cedula"  required></td>
     <td><input type="text" name='nombres' name="cedula" required></td>
     <td><input type="text" name='apellidos' name="cedula" required></td>
     <td><input type="text" name='residencia' name="cedula" required></td>
@@ -42,8 +42,40 @@
 <br>
 <br>
 <input type="submit" value="Ingresar" >
-<input type="submit" value="Consultar" >
+<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" >
 </form>
+ <form action="registrovehiculo" method="post">
+    <table>
+   <tr>
+    <th colspan='13'><h3>Registro de Vehiculos</h3></th><br><br>
+   </tr>
+   <tr>
+    <td width="20">Placa</td>
+    <td width="5">Marca</td>
+    <td width="5">Año Fabricacin</td>
+    <td width="5">Modelo</td>
+    <td width="5">Tipo</td>
+    <td width="5">Cedula Propietario</td>
+  </tr>
+  <tr>
+       
+</SELECT></td>
+    <td><input type="text"  name='placaactual'  required></td>
+    <td><input type="text"  name='marca' required></td>
+    <td><input type="text"  name='añofabricacion' required></td>
+    <td><input type="text"  name='modelo' required></td>
+    <td><input type="text"  name='tipo' required></td>
+    <td><input type="text"  name='cedulapropietario' required></td>
+    
+</select></td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<input type="submit" value="Ingresar" >
+<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" >
+</form>    
 <br>
 <br>
 <br>
@@ -101,7 +133,8 @@ padding: 5px;
 margin: 5px;
 color: black;
 font-family: verdana;
-font-style: bold;}
+font-style: bold;
+}
 div.centraTabla{
 text-align: center;
 }
