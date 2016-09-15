@@ -72,7 +72,7 @@ text-align: left;
   <tr>
   <br>
     <td><a href="Sesion.jsp"><img border="0" src="imagenes/create.jpg" width="100" height="100"></a></td>
-    <td><a href="Consultar.jsp"><img border="0" src="imagenes/read.jpg" width="100" height="100"></a></td>
+    <td><a href="ConsultasGenerales.jsp"><img border="0" src="imagenes/read.jpg" width="100" height="100"></a></td>
     <!--<td><a href="verificar.jsp"><img border="0" src="imagenes/update.jpg" width="100" height="100"></a></td>-->
     <!--<td><a href="verificarelimin.jsp"><img border="0" src="imagenes/delete.jpg" width="100" height="100"></a></td>-->
   </tr>

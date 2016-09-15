@@ -8,14 +8,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registro de Propietarios</title>
 </head>
-<body>
+<body class="card-panel white accent-1">
     
  <form action="registropro" method="get">
     <table>
    <tr>
-    <th colspan='13'><h3>Registro Propietarios</h3></th><br><br>
+    <th colspan='13'><center><h3>Registro Propietarios</h3></center></th><br><br>
    </tr>
    <tr>
     <td width="20">Cedula</td>
@@ -41,13 +44,13 @@
 <br>
 <br>
 <br>
-<center><input type="submit" value="Ingresar" >
-<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
+<center><input class='btn waves-effect blue lighten-3' type="submit" value="Ingresar" >
+<input type="button" class='btn waves-effect blue lighten-3' onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
 </form>
 <form action="registrovehiculo" method="post">
     <table>
    <tr>
-    <th colspan='13'><h3>Registro de Vehiculos</h3></th><br><br>
+       <th colspan='13'><center><h3>Registro de Vehiculos</h3></center></th><br><br>
    </tr>
    <tr>
     <td width="20">Placa</td>
@@ -73,13 +76,13 @@
 <br>
 <br>
 <br>
-<center><input type="submit" value="Ingresar" >
-    <input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
+<center><input class='btn waves-effect blue lighten-3' type="submit" value="Ingresar" >
+    <input type="button" class='btn waves-effect blue lighten-3' onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
 </form>
 <form action="registromultas" method="post">
     <table>
    <tr>
-    <th colspan='13'><h3>Registro de Multas</h3></th><br><br>
+    <th colspan='13'><center><h3>Registro de Multas</h3></center></th><br><br>
    </tr>
    <tr>
     <td width="20">Fecha Citacion</td>
@@ -91,7 +94,7 @@
   <tr>
        
 </SELECT></td>
-    <td><input type="date"  name='fechadecitacion'  required></td>
+    <td><input type="date" size="3"  name='fechadecitacion'  required></td>
     <td><input type="text"  name='numerodecitacion' required></td>
     <td><input type="text"  name='valormulta' required></td>
     <td><input type="text"  name='cedulapropietario' required></td>
@@ -102,109 +105,19 @@
 <br>
 <br>
 <br>
-<center><input type="submit" value="Ingresar" >
-<input type="button" onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
+<center><input type="submit" class='btn waves-effect blue lighten-3' value="Ingresar" >
+<input type="button" class='btn waves-effect blue lighten-3' onclick="location.href='Consultar.jsp'" value="Consultar" ></center>
 </form>    
 <br>
 <br>
 <br>
 <form action="eleccion.jsp">
-    <input type="submit" value="Regresar">
+    <center><input class='btn waves-effect blue lighten-3' type="submit" value="Regresar"></center>
 </form>
 </div>
 </body>
 </html>
-<style type="text/css">
-input[type=number]{
-    width: 50px;
-} 
-input[type=text]{
-    width: 50px;
-} 
-table th {
-  text-align: center;
-  color: blue;
-}
-table td {
-  text-align: center;
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  font-family: verdana;
-  width: 50px;
-}
-body {
-    background-color: white;
-}
-select{
-border-radius:10px;
-box-shadow:0px 0px 25px rgba(30,144,100,0.3) inset;
-height: 35px;
-padding: 5px;
-margin: 5px;
-color: black;
-font-family: verdana;
-font-style: bold;}
-option{
-border-radius:10px;
-box-shadow:0px 0px 25px rgba(30,144,100,0.3) inset;
-height: 35px;
-padding: 5px;
-margin: 5px;
-color: black;
-font-family: verdana;
-font-style: bold;}
-input{
-border-radius:10px;
-box-shadow:0px 0px 25px rgba(30,144,100,0.3) inset;
-height: 35px;
-padding: 5px;
-margin: 5px;
-color: black;
-font-family: verdana;
-font-style: bold;
-}
-div.centraTabla{
-text-align: center;
-}
-div.centraTabla table {
-margin: 0 auto;
-text-align: left;
-}
-div{
-width:100%;    
-}
-table{
-width:100%;
-border: 1px solid rgba(155,155,155,0.4);
-border-radius: 15px 15px 15px 15px;
-box-shadow:0px 10px 25px #0066cc;
-border-color: #ffffff;}
-#div{
-width:100%;
-border: 0px solid rgba(155,155,155,0.4);
-padding:0px;
-margin:0px;
-border-radius: 15px 15px 15px 15px;
-box-shadow:0px 10px 25px #0066cc;
-border-color: #ffffff;}
-td{
-text-align: center;
-font-size: 25px italic;
-width: 50px;
-font-family: verdana}
-th{
-text-align: center;
-font-size: 25px italic;
-width: 200px;
-font-family: verdana;}
-h3{
-font-family: verdana;
-font-style: italic;}
-.ts{
-text-align: left;
-}
-</style>
+
 
 
 

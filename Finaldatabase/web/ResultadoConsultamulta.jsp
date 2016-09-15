@@ -14,7 +14,7 @@
 <%
 String vehiculo = request.getParameter("vehiculo");
 System.out.println("sii" + vehiculo);
-out.println("<center><hr color='#003399'/><div id=contenedor><h3>Consulta de Propietarios</h3><FORM ACTION=index.jsp METHOD=post>");
+out.println("<center><hr color='#003399'/><div id=contenedor><h3>Consulta de Multas</h3><FORM ACTION=index.jsp METHOD=post>");
 
 Class.forName("org.postgresql.Driver").newInstance();
                         String user = "postgres";
@@ -32,54 +32,43 @@ out.println("<h3>Apellidos: "+rs1.getString("Apellidos")+"</h3>");
 out.println("<h3>Placa: "+rs1.getString("placaactual")+"</h3>");
 }
 
-ResultSet rs = Estamento.executeQuery("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"' or cedulapropietario='"+valor+"'");
+ResultSet rs = Estamento.executeQuery("select fechadecitacion,numerodecitacion,ValorMulta,Cedulapropietario,PlacaActualRevision from multas where PlacaActualRevision='"+valor+"' or Cedulapropietario='"+valor+"'");
 
-System.out.println("select codigo,fechadematriculacionanterior,fechadematriculacionactual,caduca,jefatura,totaldematricula,revision,multa,placaactual,cedulapropietario from matricula where placaactual='"+valor+"' or cedulapropietario='"+valor+"'");
+System.out.println("select fechadecitacion,numerodecitacion,ValorMulta,Cedulapropietario,PlacaActualRevision from multas where PlacaActualRevision='"+valor+"' or Cedulapropietario='"+valor+"'");
 
 out.println("<form action='ConsultarNota.jsp'>");
-out.println("<TABLE ><div></center>");
+out.println("<TABLE class='bordered' ><div></center>");
 out.println("<TR>");
-out.println("<Td >MATRICULA</Td>");
-out.println("<Td >Codigo</Td>");
-out.println("<Td >Fecha Ma. Anterior</Td>");
-out.println("<Td >Fecha Ma. Actual</Td>");
-out.println("<Td >Caduca</Td>");
-out.println("<Td >Jefatura</Td>");
-out.println("<Td >Valor</Td>");
-out.println("<Td >Revision</Td>");
-out.println("<Td >Multa</Td>");
-out.println("<Td >Placa</Td>");
-out.println("<Td >Cedula</Td>");
-out.println("</TR>");
-
+out.println("<Td >MULTAS</Td>");
+out.println("<Td >FECHA DE CITACION</Td>");
+out.println("<Td >N° DE CITACION</Td>");
+out.println("<Td >VALOR DE LA MULTA</Td>");
+out.println("<Td >CEDULA DEL PROPIETARIO</Td>");
+out.println("<Td >PLACA</Td>");
 while(rs.next()) {
 out.println("<TR>");
 out.println("<TD >DATOS</TD>");
-out.println("<TD >"+rs.getString("codigo")+"</TD>");
-out.println("<TD >"+rs.getString("fechadematriculacionanterior")+"</TD>");
-out.println("<TD >"+rs.getString("fechadematriculacionactual")+"</TD>");
-out.println("<TD >"+rs.getString("caduca")+"</TD>");
-out.println("<TD >"+rs.getString("jefatura")+"</TD>");
-out.println("<TD >"+rs.getString("totaldematricula")+"</TD>");
-out.println("<TD >"+rs.getString("revision")+"</TD>");
-out.println("<TD >"+rs.getString("multa")+"</TD>");
-out.println("<TD >"+rs.getString("placaactual")+"</TD>");
-out.println("<TD >"+rs.getString("cedulapropietario")+"</TD>");
+out.println("<TD >"+rs.getString("fechadecitacion")+"</TD>");
+out.println("<TD >"+rs.getString("numerodecitacion")+"</TD>");
+out.println("<TD >"+rs.getString("ValorMulta")+"</TD>");
+out.println("<TD >"+rs.getString("Cedulapropietario")+"</TD>");
+out.println("<TD >"+rs.getString("PlacaActualRevision")+"</TD>");
 out.println("</TR>");
 };
 rs.close();
 Estamento.close();
 conexion.close();
-
+out.println("<br>");
+out.println("<div>");
 out.println("</TABLE></form></div></center>");
 out.println("<br>");
 out.println("<br>");
 out.println("<center><form><input type='button' class='btn waves-effect blue lighten-3' onclick='window.print();' value='Imprimir'/></form></center>");
 out.println("<br>");
 out.println("<br>");
-out.println("<br>");
 out.println("</form></div></center>");
-out.println("<center><form action=Consultar.jsp><input class='btn waves-effect blue lighten-3' value=Volver type=submit></form></center>");
+out.println("<center><form action=Consultarmultas.jsp><input class='btn waves-effect blue lighten-3' value=Volver type=submit></form></center>");
+out.println("</div>");
 %>
 </body>
 </html>

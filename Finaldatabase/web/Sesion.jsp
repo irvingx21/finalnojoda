@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>LOGIN</title>
     </head>
@@ -16,7 +19,7 @@ height: 35px;
 padding: 5px;
 margin: 5px;
 color: black;
-font-family: verdana;
+
 font-style: bold;}
 table{
 width:400px;
@@ -77,7 +80,7 @@ text-align: left;
                         <td><input type="password" name="contraseña" value="" placeholder="contraseña" required/></td>
                     </tr>
                     <tr>
-                        <th colspan="2"><input type="submit" value="Iniciar Sesion" /></th>
+                        <th colspan="2"><input class='btn waves-effect blue lighten-3' type="submit" value="Iniciar Sesion" /></th>
                     </tr>
                 </tbody>
             </table>
